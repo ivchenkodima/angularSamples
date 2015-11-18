@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод data()</title>
+    <script type="text/javascript" src="prototype-1.7.1.js"></script>
+    <script type="text/javascript">
+
+
+        Event.observe(window, "load", function () {
+            Event.observe($("buy_button"), 'click', function () {
+
+                var cart = new Object();
+                cart.items = [];
+                //Помещаем данные
+                cart.items.push({ product: 'Книга', price: 24.50, quantity: 1 });
+                cart.items.push({ product: 'Ручка', price: 5.44, quantity: 3 });
+                cart.items.push({ product: 'Тетрадь', price: 10.00, quantity: 4 });
+
+                // Template - класс для форматирования строковых значений
+                var itemFormat = new Template(
+                        'Вы заказываете #{quantity} шт. ' +
+                        'товара #{product} по #{price}р. каждая'
+                        );
+
+                for (var i = 0; i < cart.items.length; i++) {
+                    var cartItem = cart.items[i];
+                    alert(itemFormat.evaluate(cartItem));
+                }
+
+            });
+        });
+
+    </script>
+    <style type="text/css">
+        li.selected {
+            background: #a09e9e;
+            color: #FFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="buy_button">Buy</button>
+
+</body>
+</html>

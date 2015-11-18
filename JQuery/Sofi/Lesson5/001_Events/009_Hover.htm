@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+    <title>Hover</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // hover(in, out) - функция, которая отвечает за привязку обработчиков на события срабатывающие при попадании и выходе курсора за область элемента.
+
+        $(document).ready(function () {
+            $("div").hover(onIn, onOut);
+        });
+
+        // Функция которая отработает при наведении курсора на элемент
+
+        function onIn() {
+            $("div").html("IN");
+        }
+
+        // Функция которая отработает при выходе курсора за элемент
+
+        function onOut() {
+            $("div").html("OUT");
+        }
+
+    </script>
+
+</head>
+<body>
+    <div style="background-color: Green; width: 100px; height: 100px; text-align: center; color: White;">
+        Test div
+    </div>
+</body>
+</html>

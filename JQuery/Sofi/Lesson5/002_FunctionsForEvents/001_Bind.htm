@@ -1,0 +1,31 @@
+﻿<html>
+    <head>
+        <title>Bind Function</title>
+
+        <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            // Метод bind(событие, обработчик) используется для привязки обработчиков на события к объекту или объектам.
+            // Он принимает в качестве аргументов событие и функцию, которая будет обработчиком.
+
+            $(document).ready(function () {
+
+                //// Обработчик на событие click для всех параграфов
+                $("p").bind("click", function () {alert("Ok");});
+
+                //// Еще один обработчик на событие click для всех параграфов
+                $("p:first").bind("mouseover", function () { alert("Ok from Second"); });
+            });
+
+         
+        </script>
+
+    </head>
+    <body>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+        <p>Paragraph</p>
+    </body>
+</html>

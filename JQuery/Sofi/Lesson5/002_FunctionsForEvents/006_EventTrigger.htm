@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Event Trigger</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // trigger позволяет запустить событие другого элемента управления на странице
+
+        var button1, button2;
+        var button1Ctr = 0, button2Ctr = 0;
+
+        $(document).ready(function() {
+            button1 = $("#first");
+            button2 = $("#second");
+            button1.click(onButton1Click);
+            button2.click(onButton2Click);
+        });
+
+        function onButton1Click() {
+            button1Ctr++;
+            $("p:first").html("Button 1 clicked " + button1Ctr);
+        }
+
+        function onButton2Click() {
+            button2Ctr++;
+            $("p:last").html("Button 2 clicked " + button2Ctr);
+
+            // При нажатии на вторую кнопку, также происходит нажатие на первую кнопку.
+            button1.trigger("click");
+        }
+    
+    </script>
+
+</head>
+<body>
+    <input type="button" id="first" value="Button 1" />
+    <input type="button" id="second" value="Button 2" />
+    <p>
+        Button 1 clicked
+    </p>
+    <p>
+        Button 2 clicked
+    </p>
+</body>
+</html>

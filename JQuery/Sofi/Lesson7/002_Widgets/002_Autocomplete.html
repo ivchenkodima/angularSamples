@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Autocomplete usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+        // autocomplete() - функция автозаполнения позволяет пользователю быстро найти и выбрать контент из предварительно заполненного списка значений
+        // используется для поиска и для фильтрации
+
+        $(document).ready(function () {
+            var emails_text = [
+                "anton123@gmail.com",
+                "vladimyr19@ukr.net",
+                "maxim1@yandex.ru",
+                "artem_artem@mail.ru",
+                "denys_is_here@gmail.com",
+                "alexey_rules@mail.ru"
+            ];
+
+            var pass_text = [
+                "anton123",
+                "vladimyr19",
+                "maxim1",
+                "artem_artem",
+                "denys_is_here",
+                "alexey_rules"
+            ];
+
+            $("#eml").autocomplete({
+                source: emails_text
+            });
+            $("#pass").autocomplete({
+                source: pass_text
+                });
+        });
+
+    </script>
+
+</head>
+<body>
+    <label>Login</label>
+    <input id="eml" type="email"/>
+    </br>
+    <label>Password</label>
+    <input id="pass" type="password"/>
+</body>
+</html>

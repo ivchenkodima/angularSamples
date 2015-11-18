@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод data()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        // data - метод добавляет дополнительные данные к элемену или считывает дополнительные данные.
+
+        $(document).ready(function () {
+
+            $("p:first").data("name", "first paragraph");
+            $("p").eq(1).data("name", "second paragraph");
+            $("p").eq(2).data("name", "thrid paragraph");
+            $("p").eq(3).data("name", "fourth paragraph");
+            $("p").eq(4).data("name", "fifth paragraph");
+
+
+            $("p").click(function () { $(this).text($(this).data("name")) });
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <p>Параграф №1</p>
+    <p>Параграф №2</p>
+    <p>Параграф №3</p>
+    <p>Параграф №4</p>
+    <p>Параграф №5</p>
+
+</body>
+</html>

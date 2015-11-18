@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Attributes</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        // .attr( имя_атрибута, значение )
+        // Задает одно или множество значений аттрибутов в выбранном наборе элементов
+
+        $(document).ready(function() {
+            // установка значений атрибута align у всех тегов <div>
+            //$("div").attr("align", "right");
+
+            // Установка значений атрибутов class у всех параграфов
+            //$("p").attr("class", "myClass");
+
+            //Для задания значений множества атрибутов используем следующую конструкцию
+            // .attr({атрибут1: "значение1", атрибут2: "значение2"})
+            $("a").attr({href:"#", title:"This is link"});
+        });
+    
+    </script>
+
+    <style type="text/css">
+        .myClass
+        {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        Текст в диве
+        <p>Текст в параграфе №1</p>
+    </div>
+    <div>
+        Текст в диве
+    </div>
+    <div>
+        Текст в диве
+    </div>
+
+    <p>Текст в параграфе №1</p>
+    <p>Текст в параграфе №2</p>
+    <p>Текст в параграфе №3</p>
+
+    <div>
+        <a>Link 1</a>
+        <a>Link 2</a>
+        <a>Link 3</a>
+    </div>
+</body>
+</html>

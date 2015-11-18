@@ -1,0 +1,43 @@
+﻿<html>
+    <head>
+        <title>Bind Function</title>
+
+        <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            // Метод on(событие, обработчик) используется для привязки обработчиков на события к объекту или объектам.
+            // Он принимает в качестве аругментов событие и функцию которые необходимо выполнить на данное событие.
+            // Метод on() используется в jQuery 1.7 вместо метода bind()
+
+            $(document).ready(function () {
+                $("ul li").on("click", 
+                    //"li" делегируем обработчик на событие click на элементах списка, 
+                function (event) {
+                    $(this).css("background", "red");
+                });
+                $("ul").append($("ol > li"));
+            });
+    
+        </script>
+
+    </head>
+    <body>
+        <ul>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+        <li>Текст</li>
+    </ul>
+    <ol>
+        <li>Строка</li>
+    </ol>
+        <img src="DelegateOn.gif" />
+    </body>
+</html>

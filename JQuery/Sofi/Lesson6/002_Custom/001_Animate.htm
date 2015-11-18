@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Toggle simple 2</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#btn").click(function () {
+
+                $("#btn").animate({ left: '120px' }, "fast").animate({ fontSize: '4em' }, "slow");
+
+            });
+
+        });
+    </script>
+
+</head>
+<body>
+    <input id="btn" type="button" value="Push me" />
+</body>
+</html>

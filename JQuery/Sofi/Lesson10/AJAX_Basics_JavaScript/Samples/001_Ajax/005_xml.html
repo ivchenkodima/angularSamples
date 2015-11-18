@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            // Создание объекта XMLHttpRequest для асинхронного запроса к серверу
+            if (window.XMLHttpRequest) { // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.open("GET", "note.xml", false);
+            xmlhttp.send(); // отправка запроса.
+            xmlDoc = xmlhttp.responseXML; // чтение ответа 
+
+            $("#to").append($(xmlDoc).find("to").text());
+            $("#from").append($(xmlDoc).find("from").text());
+            $("#message").append($(xmlDoc).find("body").text());
+
+        });
+    </script>
+</head>
+<body>
+    <div id="to"><b>To :</b> </div>
+    <div id="from"><b>From :</b> </div>
+    <div id="message"><b>Text :</b> </div>
+</body>
+</html>

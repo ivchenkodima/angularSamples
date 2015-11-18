@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Serialize</title>
+    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+</head>
+<body>
+    <form>
+        <input type="text" name="a" value="1" id="a" />
+        <textarea name="b" rows="8" cols="40"> </textarea>
+    </form>
+
+    <script>
+
+        // serialize() - Возвращает строку, с именами и значениями выбранных элементов формы. 
+        //Эта строка будет иметь формат параметров url-запроса.
+        var s = $('form').serialize();
+        alert(s);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Css function</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // css("свойство") - функция возвратит значение заданного свойства выбранного элемент
+
+        // css("свойство", "значение") - функция которая для каждого элемента набора установит css-свойство "свойство" в значение - "значение".
+
+        $(document).ready(function () {
+            // Заданием свойства color в значение red
+            $("div").css("color", "red");
+            alert($("div").css("color"));
+
+            
+            
+        });
+    </script>
+</head>
+<body>
+
+    <div align="center">
+        Текст в диве с позиционированнием по центру
+    </div>
+    <div align="left">
+        Текст в диве с позиционированнием по левому краю страницы
+    </div>
+    <div align="right">
+        Текст в диве с позиционированнием по правому краю страницы
+    </div>
+    <div>
+        Текст в диве с дефолтным позиционированнием
+    </div>
+
+    <input type="text" name="Some name" value="Vladyslav" style="color:blue"/>
+
+</body>
+</html>

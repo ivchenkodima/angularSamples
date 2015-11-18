@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>unload и beforeunload</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        //load(handler) - срабатывает по загрузке елемента и всех его подэлементов
+        // Используется со всеми элементами, которые связаны с URL: images, scripts, frames, iframes, и the window объекты.
+        //unload (handler) - срабатывает когда пользователь покидает страницу
+
+        $(document).ready(function () {
+
+            $(window).load(function () {
+                alert("Окно загрузилось");
+            });
+
+            $("#firstImg").load(function () { alert("Картинка загрузилась") });
+
+            $(window).unload(function () { alert("прощайте!"); });
+
+            $(window).bind('beforeunload', function () {
+                return " >>>>>Перед выходом<<<<<<<< ";
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+    <div>
+        <img id="firstImg" src="http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg" />
+    </div>
+</body>
+</html>

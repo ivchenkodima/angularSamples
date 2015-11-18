@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <title>Toggle</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // toggle(fn1, fn2, [fn3, fn4, ...]) - функция, которая позволяет по очереди вызывать список функций на событие click.
+        // css({"свойство":"значение"}) - функция для изменения css стилей элемента.
+
+        $(document).ready(function () {
+            $("div").toggle(fn1, fn2, fn3);
+        });
+
+        function fn1() {
+            $(this).css({ "background-color": "Yellow" });
+        }
+
+        function fn2() {
+            $(this).css({ "background-color": "Blue" });
+        }
+
+        function fn3() {
+            $(this).css({ "background-color": "Green" });
+        }
+
+    </script>
+
+</head>
+<body>
+    <div style="background-color: Green; width: 100px; height: 100px; text-align: center; color: White; cursor: pointer;">
+        Click me.
+    </div>
+</body>
+</html>

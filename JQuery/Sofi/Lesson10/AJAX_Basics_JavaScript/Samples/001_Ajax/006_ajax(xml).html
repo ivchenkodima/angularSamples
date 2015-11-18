@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+    <script>
+        window.onload = function () {
+
+            if (window.XMLHttpRequest) {// code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            }
+            else {// code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+
+            xmlhttp.open("GET", "note.xml", false);
+            xmlhttp.send();
+            xmlDoc = xmlhttp.responseXML;
+
+            $("#to").append(xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue);
+            $("#from").append(xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue);
+            $("#message").append(xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue);
+
+            // Используем ajax для пересылки xml на сервер
+            $.ajax({
+                url: "/HandlerXML.ashx",
+                processData: false,        // данный параметр запрет jQuery превращать данные отправленные в запросе в Query String
+                contentType: "text/xml",   // тип данных который отправляется на сервер
+                data: xmlDoc,              // xml данные которые необходимо отправить
+                type : "POST",             // тип HTTP запроса   
+                success: function (msg) {  // функция, которая сработает при успешной обработке запроса - ответ 200 OK
+                    alert("Data from server: " + msg.getElementsByTagName("to")[0].childNodes[0].nodeValue);
+                },
+                error: function (msg) {    // функция, которая сработает в случае ошибки
+                    alert("Data from server: " + msg);
+                }
+            });
+
+        }
+    </script>
+</head>
+<body>
+    <div id="to"><b>To whom:</b> </div>
+    <div id="from"><b>From whom:</b> </div>
+    <div id="message"><b>Text of message:</b> </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Draggable usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <!-- // <script src="//code.jquery.com/jquery-1.10.2.js"></script> -->
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+    // draggable() - функция дает возможность передвигать с помощью мыши выбранные элементы
+
+    $(document).ready(function () {
+        $("#cat").draggable();
+    });
+    </script>
+
+</head>
+    
+<body>
+    <img id="cat" height="100px" width="150px" src="http://vignette1.wikia.nocookie.net/doawk/images/5/53/Giant_nyan_cat_by_daieny-d4fc8u1.png/revision/latest?cb=20141028204848" />
+</body>
+</html>

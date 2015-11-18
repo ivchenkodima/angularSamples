@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="SampleApp">
+<head>
+    <title>ng-options</title>
+
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+
+    <script src="../Libraries/angular.js"></script>
+
+    <script>
+        var app = angular.module("SampleApp", []);
+
+        app.controller("SampleAppCtrl", function ($scope) {
+            $scope.items = ['item 1', 'item 2', 'item 3'];
+            // $scope.values = [{
+            //       id: 1,
+            //       label: 'aLabel',
+            //       subItem: { name: 'aSubItem' }
+            //     }, {
+            //       id: 2,
+            //       label: 'bLabel',
+            //       subItem: { name: 'bSubItem' }
+            //     }];
+            // $scope.selected = items[2];
+            $scope.values = [{
+                id: 1,
+                label: 'aLabel',
+                subItem: { name: 'aSubItem' }
+                }, {
+                id: 2,
+                label: 'bLabel',
+                subItem: { name: 'bSubItem' }
+            }];
+
+            $scope.selected = { name: 'aSubItem' };
+        });
+    </script>
+
+</head>
+<body ng-controller="SampleAppCtrl">
+     <!-- <select ng-model="selected" 
+                  ng-options="item.id as item.label for item in values"></select> -->
+    <select ng-options="item.subItem as item.label for item in values"
+            ng-model="selected"></select>
+</body>
+</html>
+

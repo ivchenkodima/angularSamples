@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>keydown</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // keydown( ) - Вызывает событие keydown для каждого элемента набора. 
+
+        // keydown( функция ) - Назначает функцию к событию keydown для каждого элемента набора, срабатывает при нажатии клавиши.
+
+        $(window).keydown(function (event) {
+
+            // Передаем событие в качестве аргумента функции
+
+            switch (event.keyCode) {                // event.keyCode - код нажатой клавиши
+                case 37: {
+                    alert("left pushed");
+                }
+                    break;
+                case 38: {
+                    alert("up pushed");
+                }
+                    break;
+                case 39: {
+                    alert("right pushed");
+                }
+                    break;
+                case 40: {
+                    alert("down pushed");
+                }
+                    break;
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

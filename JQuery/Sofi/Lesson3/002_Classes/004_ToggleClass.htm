@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>ToggleClass</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // toggleClass(имя класса) - функция проверяет есть ли у элемента класс и если класс есть то он удаляется, если нет - добавляется.
+        //toggleClass(имя_класса1 имя_класса2 имя_класса3) - классы перечисляються через пробел
+        
+        $(document).ready(function () {
+            // выберет все элементы div и удалит class1 у тех, у кого он есть или же добавит, если данный класс к div не применен
+            //$("div").toggleClass("class1");
+
+            // выберет все элементы div и удалит class2 у тех, у кого он есть или же добавит, если данный класс к div не применен
+            //$("div").toggleClass("class2");
+
+            // выберет все элементы div и удалит class1 и/или class2 у тех, у кого он есть или же добавит, если данный класс к div не применен
+            $("div").toggleClass("class1 class2");
+        });
+
+    </script>
+
+    <style type="text/css">
+        
+        .class1
+        {
+            color: Green;
+        }
+        .class2
+        {
+            background-color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="class1 class2">
+        Текст в диве
+    </div>
+    <div class="class1">
+        Текст в диве
+    </div>
+    <div class="class1 class2">
+        Текст в диве
+    </div>
+    <div class="class1">
+        Текст в диве
+    </div>
+    <div class="class1">
+        Текст в диве
+    </div>
+    <div class="class2">
+        Текст в диве
+    </div>
+    <div class="class2">
+        Текст в диве
+    </div>
+</body>
+</html>

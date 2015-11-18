@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>AddClass usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+    // addClass() - функция добавляет классы к элементам, стили которых применяются во время действия аннимации
+
+    $(document).ready(function () {
+        $("div").click(function () {
+            $(this).addClass("big-blue", 1000, "easeOutBounce");
+        });
+
+    });
+
+    </script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+
+        .big-blue {
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

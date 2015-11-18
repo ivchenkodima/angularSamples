@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Size function</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        //size() - возвращает количество элементов в jQuery объекте
+        $(document).ready(function () {
+            $(document.body).click(function () {
+                $(this).append($("<div>"));
+                var n = $("div").size();
+                $("span").text("There are " + n + " divs. Click to add more.");
+            }).click();
+        });
+    </script>
+    <style>
+        body {
+            cursor: pointer;
+            min-height: 100px;
+        }
+
+        div {
+            width: 50px;
+            height: 30px;
+            margin: 5px;
+            float: left;
+            background: blue;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <span></span>
+    <div></div>
+</body>
+</html>

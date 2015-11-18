@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Выборка элементов без содержимого</title>
+     <style type="text/css">
+         div
+         {
+             width:200px;
+             height:100px;
+             background-color:azure;
+             border:1px solid gray;
+         } 
+         p{
+             width:200px;
+             height:100px;
+         }
+     </style>
+    <script src="jquery-1.8.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //фильтр выбирает все элементы в которых отсутствует содержимое
+            $("*:empty").css("background-color", "Red");
+        });
+    </script>
+</head>
+<body>
+    <div>Есть содержимое</div>
+    <div><p></p></div>
+    <div>Есть содержимое</div>
+    <div>Есть содержимое</div>
+    <div>Есть содержимое</div>
+    <div></div>
+</body>
+</html>

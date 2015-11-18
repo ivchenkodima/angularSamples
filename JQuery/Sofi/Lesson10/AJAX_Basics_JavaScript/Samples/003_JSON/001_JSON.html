@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JSON</title>
+    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+    <script type="text/javascript">
+
+        var student = {
+            "studentID": 345345,
+            "Name": "Ivan Ivanov",
+            "Email": "ivanov@example.com",
+            "contents": [
+                  {
+                      "courseID": 15,
+                      "courseName": "jQuery",
+                      "lessons": 10
+                  },
+                  {
+                      "courseID": 14,
+                      "courseName": "JavaScript",
+                      "lessons": 10
+                  }
+            ],
+            "orderCompleted": true
+        };
+
+        function getList(obj) {
+            document.write("<ul>");
+
+            $.each(obj, function (key, val) {
+
+                if (typeof obj[key] == "object") {
+                    document.write('<li>' + key + '</li>');
+                    getList(obj[key]);
+                }
+                else {
+                    document.write('<li>' + key + " = " + val + '</li>');
+                }
+            });
+
+            document.write("</ul>");
+        }
+
+        getList(student);
+    </script>
+
+</head>
+<body>
+</body>
+</html>

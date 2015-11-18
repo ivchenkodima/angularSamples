@@ -1,0 +1,48 @@
+﻿<html>
+    <head>
+        <title>Unbind</title>
+        <script src="jquery-1.8.1.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            // unbind(событие, обработчик) - функция удаляет обработчик на событие с выбранного элемента
+
+            $(document).ready(function () {
+
+                $("#btnBindAll").click(function () {
+                    $("input:first").bind('click', Handler);
+                    $("input:first").bind('click', SecondHandler);
+                    $("input:first").val("Работает!");
+                });
+
+                $("#btnUnbindFirst").click(function () {
+                    $("input:first").unbind('click', Handler);
+                    $("input:first").val("Не работает");
+                });
+
+                $("#btnUnbindSecond").click(function () {
+                    $("input:first").unbind('click', SecondHandler);
+                    $("input:first").val("Не работает");
+                });
+
+            });
+
+            function Handler() {
+                alert("Hello from Handler");
+            }
+
+            function SecondHandler() {
+                alert("Hello from SecondHandler");
+            }
+        </script>
+    </head>
+    <body>
+        
+        <input type="button" value="Не работает" />
+        
+        <div style="border:1px solid silver">
+            <input type="button" value="Bind All" id="btnBindAll" />
+            <input type="button" value="Unbind First" id="btnUnbindFirst" />
+            <input type="button" value="Unbind Second" id="btnUnbindSecond" />
+        </div>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Spinner usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+    // spinner() - функция изменяет поле для ввода текста на поле для ввода чисел (спинер) с копками в виде стрелочек вверх и вниз
+
+    $(document).ready(function () {
+        $("#spinner").spinner();
+
+    });
+
+    </script>
+
+</head>
+<body>
+    <label for="spinner">Select a value:</label>
+    <input type="text" id="spinner"/>
+</body>
+</html>

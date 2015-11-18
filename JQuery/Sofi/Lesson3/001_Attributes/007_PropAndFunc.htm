@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Attributes</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        //.prop( имя_свойства, функция )
+        // функция будет возвращать значение для свойства 
+        // Устанавливает одно свойство у выбраного элемента или группы элементов
+
+        $(document).ready(function() {
+            // Установка значения свойства checked через вызов функции у всех тэгов <input>
+            $("input[type='checkbox']").prop("checked", function () {
+                alert("OK");
+                return true;
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <input id="check1" type="checkbox" checked="checked" />
+    <label for="check1">Check first</label>
+    </br>
+
+    <input id="check2" type="checkbox" />
+    <label for="check2">Check second</label>
+    </br>
+
+    <input id="check3" type="checkbox" />
+    <label for="check3">Check third</label>
+    </br>
+    <input id="check3" type="text" />
+
+</body>
+</html>

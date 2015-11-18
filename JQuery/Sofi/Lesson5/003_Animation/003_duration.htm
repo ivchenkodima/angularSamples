@@ -1,0 +1,36 @@
+﻿<html>
+<head>
+    <title>Функция Animate()</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            // duration - slow, normal, fast. По умолчанию normal
+            $("div").animate({ opacity: 0.25, marginLeft: '550px' },
+                "slow");
+
+        });
+
+    </script>
+    <style type="text/css">
+        #id1 {
+            background-color: Green;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            color: White;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="id1">
+        Test div
+    </div>
+
+</body>
+</html>

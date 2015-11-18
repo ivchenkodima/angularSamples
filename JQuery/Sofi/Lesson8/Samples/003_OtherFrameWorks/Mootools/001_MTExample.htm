@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод data()</title>
+    <script src="mootools-core-1.4.5-full-compat.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+        document.addEvent('domready', function () {
+
+            var list = $$("ul li"); // получаем все необходимые элементы
+
+            // когда курсор на объектом — приписываем ему класс, когда нет — убираем	
+            list.addEvent('mouseover', function () {
+                this.addClass('hover');
+            });
+            list.addEvent('mouseout', function () {
+                this.removeClass('hover');
+            });
+
+            // действие при клике
+            list.addEvent('click', function () {
+                list.removeClass('selected'); // убираем у всеx элементов класс 'selected'
+                this.addClass("selected");
+            });
+        });
+
+    </script>
+    <style type="text/css">
+        li.selected {
+            background: #a09e9e;
+            color: #FFF;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>Первый</li>
+        <li>Второй</li>
+        <li>Третий</li>
+        <li>Четвертый</li>
+        <li>Пятый</li>
+    </ul>
+
+</body>
+</html>

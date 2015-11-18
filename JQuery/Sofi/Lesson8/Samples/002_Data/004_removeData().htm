@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод each()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        // .removeData() - позволяет удалить все данные элемента, которые были добавлены через метод data.
+        // .removeData(key) - позволяет удалить данные по заданному ключу.
+
+        $(document).ready(function () {
+
+            $("p:first").data("name1", "first paragraph");
+            $("p:first").data("name2", "and first paragraph");
+
+
+            var dataP = $("p:first").data();
+
+            alert(dataP.name1 + " " + dataP.name2);
+
+            $("p:first").removeData("name2");
+
+            alert(dataP.name1 + " " + dataP.name2);
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <p>Параграф №1</p>
+
+
+</body>
+</html>

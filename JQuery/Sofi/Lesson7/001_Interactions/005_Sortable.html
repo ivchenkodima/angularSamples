@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sortable usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+        // sortable() - предоставляет возможность изменять порядок элементов с помощью мышки
+        // кликните по элементу и перетащите его на новую позицию
+        
+        $(document).ready(function () {
+            $("#sortable").sortable();
+            $("#sortable").disableSelection();
+        });
+
+    </script>
+
+    <style>
+        .square {
+            text-align: center;
+            /*vertical-align: center;*/
+            padding-top: 20px;
+            float: left;
+            width: 100px;
+            height: 100px;
+            border: 2px solid red;
+            margin: 5px;
+            background-color: rgba(46, 204, 199, 0.58);
+        }
+    </style>
+
+</head>
+<body>
+    <div id="sortable">
+        <div class="square">First square</div>
+        <div class="square">Second square</div>
+        <div class="square">Third square</div>
+        <div class="square">Fourth square</div>
+    </div>
+</body>
+</html>

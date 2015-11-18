@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод data()</title>
+    <script src="prototype-1.7.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        Event.observe(document, 'click', function () {
+
+            var elt = $('someElement');
+            var items = elt.select('li');
+
+            for (var i = 0; i < items.size() ; i++) {
+                items[i].update('Элемент ' + i);
+            }
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <ul id="someElement">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <div id="exampleDiv"></div>
+
+</body>
+</html>

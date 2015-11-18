@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод grep()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <style type="text/css">
+        p {
+            color: Red;
+        }
+    </style>
+    <script type="text/javascript">
+
+        // $.grep(array, callback, invert) - фильтрация массива
+        // array - массив
+        // callback - функция сортировки
+        // invert - false - функция должна вернуть все элементы удовлетворяющие запрос, true - вернуть те что не удавлетворяют запрос
+
+        $(document).ready(function () {
+
+            var arr = [1, 9, 3, 8, 6, 1, 5, 9, 4, 7, 3, 8, 6, 9, 1];
+            $("div").text(arr.join(", "));
+
+            // Устраняем все элементы не равные 5 и у которых индекс больше 4
+
+            //arr = jQuery.grep(arr, function (n, i) { return (n != 5 && i > 4); });
+
+            // Устраняем все элементы равные 5 и у которых индекс меньше 4
+            arr = jQuery.grep(arr, function (n, i) { return (n != 5 && i > 4); }, true);
+
+            $("p").text(arr.join(", "));
+
+            arr = jQuery.grep(arr, function (a) { return a != 9; }); // Устраняем все элементы равные 9
+            $("span").text(arr.join(", "));
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div></div>
+    <p></p>
+
+    <span></span>
+
+</body>
+</html>

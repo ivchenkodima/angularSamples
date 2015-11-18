@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ajax</title>
+    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            // Пример асинхронной загрузки JavaScript сценария
+            $.ajax({
+                type: "GET",
+                url: "test.js",
+                dataType: "script" // тип, который ожидается получить со стороны сервера
+                                   // возможные значения - xml, html, script, json, text
+            });
+        }
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

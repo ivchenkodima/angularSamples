@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Index function</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // index( element ) - производит поиск элемент с заданного набора элементов и возвращает его индекс
+        // Если передан объект jQuery, то будет выбран только первый элемент.
+
+        $(document).ready(function() {
+            $("div").click(function () {
+                $("span").text("Clicked div with index " + $("div").index("div"));
+            });
+        });
+
+    </script>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            border: 2px double black;
+            float:left;
+            margin: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <span></span>
+    <div>First</div>
+    <div>Second</div>
+    <div>Third</div>
+</body>
+</html>

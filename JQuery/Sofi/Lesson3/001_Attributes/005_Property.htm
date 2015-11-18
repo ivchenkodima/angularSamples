@@ -1,0 +1,46 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Attributes/attr</title>
+</head>
+
+<script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+<body>
+
+    <input id="check1" type="checkbox" checked="checked" />
+    <label for="check1">Check first</label>
+    </br>
+
+    <input id="check2" type="checkbox" />
+    <label for="check2">Check second</label>
+    </br>
+
+    <input id="check3" type="checkbox" />
+
+    <input id="check3" type="text" />
+    <label for="check3">Check third</label>
+    </br>
+
+    <script type="text/javascript">
+
+        // Функция prop позволяет получить значение свойства элемента
+        // Если выбран набор элементов, тогда функция возвратит значение первого встречающегося элемента на странице
+        // Если элемент с выбранным свойством отсутсвует, то возвращается значение false (undefined)
+
+        //.prop( имя_свойства ) 
+
+        // К свойствам относятся visited, active, hover, checked, unchecked и т.д.
+
+        // Получение значения атрибута align у первого "div"
+        $("input").change(function () {
+            var $input = $(this);
+            console.log($input);
+            // Вывод в модальное окно булевого значения свойства checked для поля ввода
+            alert($input.prop("checked") + " " + $input.attr("id"));
+        });
+
+    </script>
+
+</body>
+</html>

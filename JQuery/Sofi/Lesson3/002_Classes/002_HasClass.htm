@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HasClass</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // hasClass(имя класса) - функция поверяет наличие класса у элемента и возвращает true если класс есть или false если нет.
+
+        
+        $(document).ready(function () {
+            // проверяем есть ли класс class1 у первого тега <p> на странице.
+            var className = "class1";
+            if ($("div").hasClass(className))
+                $("div").css("background-color", "green");
+            else
+                $("div").css("background-color", "red");
+        });
+          
+    </script>
+
+    <style type="text/css">
+        .class1
+        {
+            color: black;
+        }
+        .class2
+        {
+            color: Red;
+        }
+        .class3
+        {
+            color: Red;
+        }
+    </style>
+    
+</head>
+<body>
+    <p class="class1">
+        Параграф с id="First"
+    </p>
+    <p class="class2">
+        Параграф с id="Second"
+    </p>
+
+    <div class="class1">
+        Текст в диве
+    </div>
+    <div class="class1">
+        Текст в диве
+    </div>
+    <div class="class1">
+        Текст в диве
+    </div>
+    <div class="class3">
+        Текст в диве
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿<html>
+    <head>
+
+        <title>Селектор, родитель > сын</title>
+
+        <!-- Подключение библиотеки JQuery-->
+   
+        <script src="jquery-1.8.0.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            // JQuery скрипт
+            // $("родитель(селектор) > потомок(селектор)") - JQuery селектор - позволяет выбрать верхние по вложености
+            //  дочерние элементы относительно родительского.
+
+            $(document).ready(function() {
+              
+                //$("#main > *").css("border", "double 3px red");
+              
+                $("#main > div").css("border", "double 3px red");
+            });
+        </script>
+
+        <style type="text/css">
+            body
+            {
+                font-size: 14px;
+            }
+            span#main
+            {
+                display: block;
+                background: yellow;
+                height: 110px;
+            }
+            button
+            {
+                display: block;
+                float: left;
+                margin: 2px;
+                font-size: 14px;
+            }
+            div
+            {
+                width: 90px;
+                height: 90px;
+                margin: 5px;
+                float: left;
+                background: #bbf;
+                font-weight: bold;
+            }
+            div.mini
+            {
+                width: 30px;
+                height: 30px;
+                background: green;
+            }
+        </style>
+    </head>
+    <body>
+        <span id="main">
+            <!----------------->
+            <div>
+            </div>
+            <!----------------->
+            <button>
+                Child
+            </button>
+            <!----------------->
+            <div class="mini">
+            </div>
+            <!----------------->
+            <div>
+                <div class="mini">
+                </div>
+                <div class="mini">
+                </div>
+            </div>
+            <!----------------->
+            <div>
+                <button>
+                    Grand
+                </button>
+            </div>
+            <!----------------->
+             <div id="test">
+                <span>A Span <em>in</em> child</span>
+             </div>
+            <span>A Span in main</span> 
+       </span>
+    </body>
+</html>

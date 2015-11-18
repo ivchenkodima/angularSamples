@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Param</title>
+    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+
+            var myObject = {
+                one: 1,
+                two: 2,
+                three: 3
+            };
+
+            // param() - Преобразует объект, массив или массив объектов в строку, которая соответствует формату передачи данных через url.
+
+            var recursiveEncoded = $.param(myObject);
+
+            alert(recursiveEncoded);
+
+
+            var myObject = {
+                a: {
+                    one: 1,
+                    two: 2,
+                    three: 3
+                },
+                b: [1, 2, 3]
+            };
+
+            // param выполняет автоматически URL кодирование
+            var recursiveEncoded = $.param(myObject);
+
+            // выполняем декодирование перед выводом данных
+            var recursiveDecoded = decodeURIComponent($.param(myObject));
+
+            alert(recursiveEncoded);
+            alert(recursiveDecoded);
+
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

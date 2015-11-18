@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ajax</title>
+    <script type="text/javascript" src="jquery-1.8.1.js"></script>
+    <script type="text/javascript">
+        // обработчик события загрузки страницы.
+        window.onload = function () {
+            // Создание объекта запроса.
+
+            //  $.ajaxSetup() - установка глобальных настроек для запросов AJAX.
+            $.ajaxSetup({
+                url: "/HandlerData.ashx",
+            });
+
+            // $.ajax() возвращает объект XMLHttpRequest.
+            // В качестве аргумента функции $.ajax() передается объект, состоящий из пар ключ/значение, которые используются для инициализации и управления 
+            // запросом.
+
+            $.ajax({
+                type: "POST",                     // тип HTTP запроса на сервер
+                data: "name=Ivan&location=Kiev",  // данные отправляемые на сервер в формате ключ=значение
+                success: function (msg) {         // метод, который запустится при успешной обработке запроса. В качестве параметра принимает ответ от сервера.
+                    alert("Data Saved: " + msg);
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>

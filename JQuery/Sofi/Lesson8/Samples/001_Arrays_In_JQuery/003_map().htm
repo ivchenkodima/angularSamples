@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод map()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <style type="text/css">
+        p {
+            color: Red;
+        }
+    </style>
+    <script type="text/javascript">
+
+        // $.map(array, function) - преобразование массива
+        // первый аргумент имя массива
+        // второй функция преобразования
+
+        $(document).ready(function () {
+
+            var arr = ["Alex", "Max", "Corwin", "Daniel", "Den"];
+            $("div").text(arr.join(", "));
+
+            arr = jQuery.map(arr, function (n, i) {
+                return (n.toUpperCase() + i);
+            });
+            $("p").text(arr.join(", "));
+
+            arr = jQuery.map(arr, function (a) { return a + a; });
+            $("span").text(arr.join(", "));
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div></div>
+    <p></p>
+
+    <span></span>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Effects Slide Down</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    
+    <style>
+        div {
+            width: 50px;
+            height: 30px;
+            margin: 5px;
+            float: left;
+            background: green;
+  }
+
+    </style>
+
+    <script type="text/javascript">
+
+        // jQuery.fx.interval - скорость в миллисекундах во время которой работает аннимация
+        $(document).ready(function () {
+            // jQuery.fx.interval = 100;
+            $("input").click(function () {
+                $("div").toggle(3000);
+            });
+        });
+   
+    </script>
+
+
+</head>
+<body>
+    <p><input type="button" value="Run" /></p>
+    <div></div>
+</body>
+</html>

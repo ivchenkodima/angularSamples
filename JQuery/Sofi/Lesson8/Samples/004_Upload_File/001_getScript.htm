@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .block {
+            background-color: blue;
+            width: 150px;
+            height: 70px;
+            margin: 10px;
+        }
+    </style>
+    <!-- Использование CDN (Content Delivery Network) для получения jQuery фреймворка -->
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+    <button id="go">&raquo; Run</button>
+    <script>
+        (function () {
+            var url = "test.js";
+            // $.getScript - загружает файл с сервера используя HTTP GET запрос, после чего запускает его.
+            // $.getScript(адрес скрипта, функция для запуска при успешной загрузке)
+            $.getScript(url, function () {
+                $("#go").click(function () {
+                    $.sayHello();
+                });
+            });
+        })();
+    </script>
+</body>
+</html>

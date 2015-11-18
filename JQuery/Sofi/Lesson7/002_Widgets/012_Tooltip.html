@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Tooltip usage</title>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+    // tooltip() - функция создает кастомизированные подсказки, тем же заменяя стандартные HTML подсказки
+
+    $(document).ready(function () {
+        $("#email_add").tooltip();
+
+    });
+
+    </script>
+</head>
+<body>
+    <label for="email_add" > Email: </label>
+    <input id="email_add" title="Please enter your email!" type="email" />
+    </br>
+    </br>
+    <label for="pass_add"> Password: </label>
+    <input id="pass_add" title="Please enter your password!"  type="password" />
+</body>
+</html>

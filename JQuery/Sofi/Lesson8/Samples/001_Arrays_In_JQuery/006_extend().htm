@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод extend()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <style type="text/css">
+        p {
+            color: Blue;
+        }
+
+        div a {
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+
+        // extend - содержимое двух или большего количества объектов добавляет в объект переданый первым параметром. 
+
+        var target = { a: 1, b: 2, c: 3 };
+        var source1 = { c: 4, d: 5 };
+        var source2 = { e: 6, d: 7 };
+        $.extend(target, source1, source2); // target = {a: 1, b: 2, c: 4, d: 7, e: 6}
+
+    </script>
+
+</head>
+<body>
+    <div style="background-color: Gray">
+        <a>First</a>
+        <a>Second</a>
+        <a>Third</a>
+    </div>
+</body>
+</html>

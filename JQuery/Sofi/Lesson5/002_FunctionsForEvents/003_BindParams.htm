@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bind Function</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // Пердача в параметры обработчика дополнительного JSON объекта
+
+        $(document).ready(function () {
+            $("p").bind("mouseover click",
+                { param1: "Hello", param2: "World" }, // дополнительные данные для обработчика
+                Handler); // Обработчик на события mouseover и clcik
+        });
+
+        function Handler(event) {
+            // event.data - получение доступа к дополнительным параметрам.
+            alert(event.data.param1 + " " + event.data.param2);
+        }
+
+    </script>
+
+</head>
+<body>
+    <p>
+        Paragraph
+    </p>
+</body>
+</html>

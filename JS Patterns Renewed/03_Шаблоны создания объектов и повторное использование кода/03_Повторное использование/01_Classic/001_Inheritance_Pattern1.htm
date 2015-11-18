@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Наследование. Шаблон №1</title>
+
+    <script>
+
+        // родительский конструктор
+        function Parent(name) {
+            this.name = name || "Adam";
+        }
+        // дополнительное поведение добавленное в прототип.
+        Parent.prototype.say = function () {
+            alert("Hello my name is " + this.name);
+        }
+
+       function Child(name) { }
+
+        Child.prototype = new Parent(); 
+
+        var kid = new Child();
+        kid.name = "Ivan";
+        kid.say();
+
+
+        // Недостатки шаблона:
+        // Невозможно передать параметры от дочернего конструктора к родительскому
+
+        var kid2 = new Child("Ivan");
+        kid2.say();
+    </script>
+</head>
+<body>
+</body>
+</html>

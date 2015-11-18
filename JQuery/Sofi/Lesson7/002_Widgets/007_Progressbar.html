@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Progressbar usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+        // progressbar() - показывает статус процесса в виде полосы прогресса
+
+        $(document).ready(function () {
+
+            $("#progress").progressbar({
+                value: false
+            });
+
+        });
+
+    </script>
+
+</head>
+<body>
+    <div id="progress"></div>
+</body>
+</html>

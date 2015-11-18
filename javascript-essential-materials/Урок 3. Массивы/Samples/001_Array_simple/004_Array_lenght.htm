@@ -1,0 +1,29 @@
+﻿<!--
+
+        Массив - обьект,  у которого имеется свойство length, 
+        это свойство хранит в себе длину массива.
+
+-->
+
+<html>
+<head>
+    <title>Длина массива, свойство length</title>
+
+    <script type="text/javascript">
+
+        // Длина массива = 5 элементов.
+        var d = [1,2,3,4,5];
+
+        document.write("Длинна массива [" + d + "] равна =" + d.length);
+        var sum = 0;
+        for(var index = 0; index < d.length; index++){
+        	sum = sum + d[index];
+        }
+        console.log("average  = " + sum / d.length);
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

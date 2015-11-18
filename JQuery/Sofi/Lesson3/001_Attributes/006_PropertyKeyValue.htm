@@ -1,0 +1,45 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Attributes</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        // .prop( свойство, значение )
+        // Задает одно или множество значений свойств в выбранном наборе элементов
+
+        $(document).ready(function () {
+            // установка свойств checked у всех тегов <input> в значение false - не отмечены
+            //$("input").prop("checked", true);
+
+            // Установка значений свойств disabled у всех тегов <input> в значение false - доступны
+            //$("input").prop("disabled", true);
+
+            //Для задания значений множества свойств используем следующую конструкцию
+            // .prop({свойство1: "значение1", свойство2: "значение2"})
+            $("input").prop({checked:false, disabled:false});
+        });
+
+    </script>
+
+    <style type="text/css">
+        .myClass {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <input id="check1" type="checkbox" checked="checked" />
+    <label for="check1">Check first</label>
+    </br>
+
+    <input id="check2" type="checkbox" />
+    <label for="check2">Check second</label>
+    </br>
+
+    <input id="check3" type="checkbox" />
+    <label for="check3">Check third</label>
+    </br>
+</body>
+</html>

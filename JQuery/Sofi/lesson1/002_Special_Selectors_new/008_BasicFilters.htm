@@ -1,0 +1,49 @@
+﻿<html>
+    <head>
+
+        <title>JQuery, базовые фильтры</title>
+
+        <!-- Подключение библиотеки JQuery-->
+   
+        <script src="jquery-1.8.0.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            // JQuery скрипт
+            // :first - получение первого элемента.
+            // :last - получение последнего элемента.
+            // :not (selector) - все кроме соответствуещего селектору.
+            $(document).ready(function() {
+                $("tr:first").css("font-style", "italic");
+                //$("tr:not(:first)").css("font-style", "italic");
+            });
+        </script>
+
+        <style type="text/css">
+            td
+            {
+                color: blue;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    Row 1
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Row 2
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Row 3
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

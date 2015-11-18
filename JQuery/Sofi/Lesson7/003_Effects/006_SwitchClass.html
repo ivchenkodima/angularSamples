@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Switch Class usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        // switchClass() - функция переключатель между классами, удаляет/ добавляет классы к выбранным элементам пока анимация выполняется
+
+        $(document).ready(function () {
+           setInterval(function () {
+                $(".big-blue").click(function () {
+                    $(this).switchClass("big-blue", "default", 1000);
+                });
+
+                $(".default").click(function () {
+                    $(this).switchClass("default", "big-blue", 1000);
+                });
+            }, 1000);
+
+          
+            /*$("div").click(function () {
+                    $(this).toggleClass("big-blue",1000);
+                });*/
+            
+        });
+
+    </script>
+    <style>
+        .default {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid blue;
+        }
+
+        .big-blue {
+            width: 200px;
+            height: 200px;
+            background-color: #00f;
+        }
+    </style>
+</head>
+<body>
+    <div class="big-blue"></div>
+</body>
+</html>

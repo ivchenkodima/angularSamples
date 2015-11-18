@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <title>MouseMove</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // mousemove - функция устанавливающая обработчик на событие движения курсора по поверхности элемента.
+        $(document).ready(function() {
+            $("div").mousemove(function (e) {
+
+                // парметр e объект с информацие о событии.
+                var pageCoord = "( " + e.pageX + ", " + e.pageY + " )";
+                $("span").text("Page coords " + pageCoord);
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <span>Coords</span>
+    <div style="background-color: Yellow; width: 300px; height: 300px;">
+    </div>
+</body>
+</html>

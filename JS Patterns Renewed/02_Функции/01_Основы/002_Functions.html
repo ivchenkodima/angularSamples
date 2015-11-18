@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Функции</title>
+</head>
+<body>
+    <script>
+
+        // именованная функция-выражение
+        var add1 = function add(a, b) {
+            return console.log(a + b);
+       }
+
+        // функция-выражение или анонимная функция
+        add2 = function (a, b) {
+            return console.log(a + b);
+        }
+        // функция-объевление
+        function add3(a, b) {
+            var temp = a + b;
+            return console.log(temp);
+        }
+        add1(1,2);//3
+        add2(1,2);//3
+        add3(1,2);//3
+
+        // add(1,2);//
+
+    </script>
+</body>
+</html>

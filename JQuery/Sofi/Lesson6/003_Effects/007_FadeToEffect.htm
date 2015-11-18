@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Effects FadeTo</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("p").click(function () {
+                // Первый параметр - скорость анимации, второй - прозрачность до которой анимация будет проигрываться
+                // 1 - элемент полностью непрозрачен 0 - элемент скрыт
+                $(this).fadeTo("slow", 0.33);
+            });
+            $("div").click(function () {
+                $(this).fadeTo("slow", 0.5);
+            });
+        });
+    </script>
+    <style type="text/css">
+
+
+        div {
+            margin: 3px;
+            width: 80px;
+            height: 80px;
+            float: left;
+        }
+
+            div#one {
+                background: #f00;
+            }
+
+            div#two {
+                background: #0f0;
+            }
+
+            div#three {
+                background: #00f;
+            }
+    </style>
+
+
+
+</head>
+<body>
+    <p>
+        Paragraph.
+    </p>
+    <p>
+        Paragraph.
+    </p>
+    <div id="one">
+    </div>
+    <div id="two">
+    </div>
+    <div id="three">
+    </div>
+</body>
+</html>

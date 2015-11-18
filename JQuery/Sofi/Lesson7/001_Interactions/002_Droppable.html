@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Droppable usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+    // droppable() - создает место где перетаскиваемый элемент мог бы быть расположен (брошен)
+    $(document).ready(function () {
+        $("#cat").draggable();
+        $("#place_for_cat").droppable({
+            drop: function (event, ui) {
+                $(this).addClass("finded_cat");
+            }
+        });
+    });
+    </script>
+    <style>
+        #place_for_cat {
+            margin-top: 200px;
+            margin-left: 800px;
+        }
+
+        .finded_cat {
+            border: 4px solid yellow;
+        }
+    </style>
+</head>
+<body>
+    <img id="cat" height="100px" width="150px" src="http://vignette1.wikia.nocookie.net/doawk/images/5/53/Giant_nyan_cat_by_daieny-d4fc8u1.png/revision/latest?cb=20141028204848" />
+    <div>
+        
+    <img id="place_for_cat" height="200px" width="350px" src="http://mediasubs.ru/group//uploads/kl/klub-dlya-lyudej-u-kotoryih-doma-zhivut-koshki/image2/S00YjdhLT.jpg" />
+    </div>
+</body>
+</html>

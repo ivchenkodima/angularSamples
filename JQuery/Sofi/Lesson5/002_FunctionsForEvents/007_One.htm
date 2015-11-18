@@ -1,0 +1,42 @@
+﻿<html>
+<head>
+    <title>Once Function</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // Метод one(события, обработчики) используется для привязки обработчиков на события к объекту или объектам
+        // При этом обработчик вызывается только ОДИН раз.
+
+        $(document).ready(function () {
+            // Обработчик на события click (попробывать one заменить на bind)
+            $("p").one("click", Handler);
+        });
+
+        function Handler() {
+            //alert("Clicked");
+            $(this).text("Clicked");
+        }
+
+    </script>
+
+</head>
+<body>
+    <p>
+        Paragraph
+    </p>
+    <p>
+        Paragraph
+    </p>
+    <p>
+        Paragraph
+    </p>
+    <p>
+        Paragraph
+    </p>
+    <p>
+        Paragraph
+    </p>
+</body>
+</html>

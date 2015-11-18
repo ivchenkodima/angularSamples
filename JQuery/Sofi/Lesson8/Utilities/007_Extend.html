@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Extend function</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // extend(target , object) - функция расширяет объект,переданный в качестве первого аргумента, свойствами и методами объектов переданных в качестве параметров
+        $(document).ready(function () {
+            var object1 = {
+                apple: 0,
+                banana: { weight: 52, price: 100 },
+                cherry: 97
+            };
+            var object2 = {
+                banana: { price: 200 },
+                durian: 100
+            };
+            $.extend(object1, object2);
+            $("div").text(JSON.stringify(object1));
+        });
+       
+        </script>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

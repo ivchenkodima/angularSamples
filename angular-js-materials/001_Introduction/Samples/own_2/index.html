@@ -1,0 +1,41 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="main">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	 <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+
+	 <script src="../Libraries/angular.js"></script>
+    
+	<!-- // <script type="text/javascript" src='js/app.js'></script> -->
+	<!-- // <script type="text/javascript" src='js/ctrl.js'></script> -->
+	<!-- // <script type="text/javascript" src='js/model.js'></script> -->
+
+<script>
+	var data = {};
+	var main = angular.module('main')
+
+</script>
+
+</head>
+<body ng-controller='todoCtrl'>
+	<div class="container">
+		<div class="page-header">
+			<h1>Todo list</h1>
+		</div>
+	<div class="panel">
+		<div class="input-group">
+			<input type="text" class="form-control" ng-model='name'>
+			<input type="text" class="form-control" ng-model='data'>
+			<input type="text" class="form-control" ng-model='description'>
+			<span class="input-group-btn">
+					<button class="btn btn-default" ng-click='addNewItem()'>Add</button>
+			</span>
+		</div>
+	</div>
+	</div>
+
+	
+</body>
+</html>

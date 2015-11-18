@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод inArray()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <style type="text/css">
+        p {
+            color: Red;
+        }
+    </style>
+    <script type="text/javascript">
+
+        // $.inArray(value, array) - возвращает индекс элемента, если он есть в массиве или -1.
+
+        $(document).ready(function () {
+
+            var arr = ["a", "b", "c", "d", "e"];
+
+            var item = $.inArray("b", arr);
+            alert("You choose element number " + item);
+
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <div></div>
+    <p></p>
+
+    <span></span>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Dialog function</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+        // dialog() - функция позволяющая отобразить любой контент в качестве диалогового окна
+
+        $(document).ready(function () {
+            $("#new_dialog").dialog()
+
+        });
+
+    </script>
+    <style>
+        #cat{
+            height: 100px;
+            width: 150px;
+        }
+
+        #in_m{
+            color: #74b081;
+        }
+        #cats{
+            float: left;
+            margin-right: 20px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="new_dialog" title="Custom dialog window">
+        <p id="in_m">Here will be any text</p>
+        <img id="cat" src="http://vignette1.wikia.nocookie.net/doawk/images/5/53/Giant_nyan_cat_by_daieny-d4fc8u1.png/revision/latest?cb=20141028204848" />
+    </div>
+    <div>
+        <img id="cats" src="http://www.independent.co.uk/incoming/article8465213.ece/alternates/w620/v2-cute-cat-picture.jpg" />
+        <p>
+            Існує багато варіацій уривків з Lorem Ipsum, але більшість з них зазнала певних змін на кшталт 
+            жартівливих вставок або змішування слів, які навіть не виглядають правдоподібно. Якщо ви збираєтесь 
+            використовувати Lorem Ipsum, ви маєте упевнитись в тому, що всередині тексту не приховано нічого, що
+             могло б викликати у читача конфуз. Більшість відомих генераторів Lorem Ipsum в Мережі генерують текст 
+            шляхом повторення наперед заданих послідовностей Lorem Ipsum. Принципова відмінність цього генератора робить 
+            його першим справжнім генератором Lorem Ipsum. Він використовує словник з більш як 200 слів латини та цілий 
+            набір моделей речень - це дозволяє генерувати Lorem Ipsum, який виглядає осмислено. Таким чином, згенерований 
+            Lorem Ipsum не міститиме повторів, жартів, нехарактерних для латини слів і т.ін.
+        </p>
+        
+        <p>
+            Вже давно відомо, що читабельний зміст буде заважати зосередитись людині, яка оцінює композицію сторінки. 
+            Сенс використання Lorem Ipsum полягає в тому, що цей текст має більш-менш нормальне розподілення літер на 
+            відміну від, наприклад, "Тут іде текст. Тут іде текст." Це робить текст схожим на оповідний. Багато програм 
+            верстування та веб-дизайну використовують Lorem Ipsum як зразок і пошук за терміном "lorem ipsum" відкриє багато 
+            веб-сайтів, які знаходяться ще в зародковому стані. Різні версії Lorem Ipsum з'явились за минулі роки, деякі випадково, 
+            деякі було створено зумисно (зокрема, жартівливі).
+        </p>
+    </div>
+</body>
+</html>

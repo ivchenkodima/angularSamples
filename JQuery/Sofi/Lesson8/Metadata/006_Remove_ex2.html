@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Remove Data</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        //removeData( array ) - удаляет масив данных
+        //задается как масив строк или строка с ключами данных
+
+        $(document).ready(function () {
+            $("#first").data("feature", { first: "square", identificator: "first" });
+            $("#first").data("feature2", "#ad5757");
+            $("#second").data("feature", { first: "square", identificator: "second" });
+            $("#third").data("feature", { first: "square", identificator: "third" });
+            $("#fourth").data("feature", { first: "square", identificator: "fourth" });
+
+            $("#first").removeData("feature feature2");
+            $("div").click(function () {
+                $("p:first").text($(this).data("feature").first + " " + $(this).data("feature").identificator + "; color " + $(this).data("feature2"));
+            });
+        });
+    </script>
+    <style>
+        div {
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            margin: 5px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            float: left;
+        }
+
+        #first {
+            background-color: #ad5757;
+        }
+
+        #second {
+            background-color: #12347a;
+        }
+
+        #third {
+            background-color: #7bbe2f;
+        }
+
+        #fourth {
+            background-color: #962369;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">First</div>
+    <div id="second">Second</div>
+    <div id="third">Third</div>
+    <div id="fourth">Fourth</div>
+    <p></p>
+</body>
+</html>

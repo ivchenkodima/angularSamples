@@ -1,0 +1,32 @@
+﻿<html>
+    <head>
+
+        <title>JQuery getting started</title>
+
+        <!-- Подключение библиотеки JQuery-->
+   
+        <script src="jquery-1.8.0.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            var div1;
+            var leftPos = 0;
+
+            window.onload = function () {
+                div1 = document.getElementById("div1");
+                setInterval(animate, 10); //1-й параметр функция ли строка кода для выполнения, 2-й параметр интервал в милисекундах
+            }
+
+            function animate() {
+                div1.style.left = leftPos + "px";
+                leftPos += 1;
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <div id="div1" style="height:30px; width:30px; background-color:Green; position:relative;"></div>
+    </body>
+</html>

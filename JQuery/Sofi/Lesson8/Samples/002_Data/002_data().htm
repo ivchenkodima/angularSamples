@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод data()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        // data - метод добавляет дополнительные данные к элемену или считывает дополнительные данные.
+
+        $(document).ready(function () {
+
+            $("p:first").data("obj", { name: "Mr. Paragraph", sName: "Text", age: 24 });
+
+
+
+            var dataP = $("p:first").data("obj");
+
+            //alert(dataP.obj.name + " " + dataP.obj.sName + " " + dataP.obj.age);
+
+            alert(dataP.name + " " + dataP.sName + " " + dataP.age);         // Нельзя обращатся к свойствам обьекта не указав имя
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <p>Параграф №1</p>
+
+</body>
+</html>

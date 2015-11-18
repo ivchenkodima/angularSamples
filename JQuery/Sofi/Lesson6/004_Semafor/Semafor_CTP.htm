@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Semafor</title>
+    <script src="jquery-1.3.2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var activeColor;
+        var c = "C";
+        var red = "#red";
+        var yellow = "#yellow";
+        var green = "#green";
+        var redC = red + c;
+        var yellowC = yellow + c;
+        var greenC = green + c;
+        var active = "red";
+        var TimerOn;
+        var TimerOff;
+        $(document).ready(
+        function () {
+            $(greenC).click(TurnGreen);
+            $(redC).click(TurnRed);
+            $(yellowC).click(TurnYellow);
+        }
+
+        );
+
+        function TurnGreen() {
+            switch (active) {
+                case "red": {
+                        setTimeout("LightOn(yellow,'400')", 0);
+                        setTimeout("LightOff(red, '400')", 1000);
+                        setTimeout("LightOff(yellow, '400')", 1000);
+                        setTimeout("LightOn(green,'400')", 1400);
+                        active = "green";
+                    }
+                    break;
+                case "yellow":
+                    {
+                        clearInterval(TimerOff);
+                        clearInterval(TimerOn);
+                        setTimeout("LightOff(yellow,'400')", 0);
+                        setTimeout("LightOn(green,'400')", 800);
+                        active = "green";
+                    }
+                    break;
+
+            }
+        }
+
+        function TurnRed() {
+            switch (active) {
+                case "green":
+                    {
+                        for (var i = 0; i < 3; i++) {
+                            setTimeout("LightOff(green,'200')", i * 400);
+                            if (i != 2) {
+                                setTimeout("LightOn(green,'200')", i * 400 + 400);
+                            }
+                        }
+                        setTimeout("LightOn(yellow,'200')", 2000);
+                        setTimeout("LightOff(yellow,'200')", 3200);
+                        setTimeout("LightOn(red,'200')", 3400);
+                        active = "red";
+
+                    }
+                    break;
+                case "yellow":
+                    {
+                        clearInterval(TimerOff);
+                        clearInterval(TimerOn);
+                        setTimeout("LightOff(yellow,'400')", 0);
+                        setTimeout("LightOn(red,'400')", 800);
+                        active = "red";
+
+                    }
+                    break;
+
+            }
+        }
+        function TurnYellow() {
+            switch (active) {
+                case "red":
+                    {
+                        setTimeout("LightOff(red,'400')", 0);
+                        TimerOn = setInterval("LightOn(yellow,'400')", 400);
+                        TimerOff = setInterval("LightOff(yellow,'400')", 800);
+                        active = "yellow";
+                    }
+                    break;
+                case "green":
+                    {
+                        setTimeout("LightOff(green,'400')", 0);
+                        TimerOn = setInterval("LightOn(yellow,'400')", 400);
+                        TimerOff = setInterval("LightOff(yellow,'400')", 800);
+                        active = "yellow";
+                    }
+                    break;
+            }
+        }
+
+
+        function LightOn(color, time) {
+            $(color).fadeIn(time);
+        }
+        function LightOff(color, time) {
+            $(color).fadeOut(time);
+        }
+
+    </script>
+    <style type="text/css">
+        .sema {
+            margin: 3px;
+            margin-bottom: 20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 40px 40px 40px 40px;
+        }
+
+        .semaControl {
+            margin: 2px;
+            width: 40px;
+            float: left;
+            height: 40px;
+        }
+
+        #red {
+            background: #f00;
+        }
+
+        #yellow {
+            background: #FFFF00;
+            display: none;
+        }
+
+        #green {
+            background: #00FF00;
+            display: none;
+        }
+
+        #redC {
+            background: #f00;
+        }
+
+        #yellowC {
+            background: #FFFF00;
+        }
+
+        #greenC {
+            background: #00FF00;
+        }
+    </style>
+</head>
+<body>
+    <div style="background-image: url(SemaforBack.jpg); width: 304px; height: 350px">
+        <div style="width: 80px; height: 350px; margin-left: 110px; padding-top: 45px;">
+            <div class="sema">
+                <div class="sema" id="red">
+                </div>
+            </div>
+            <div class="sema">
+                <div class="sema" id="yellow">
+                </div>
+            </div>
+            <div class="sema">
+                <div class="sema" id="green">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr />
+    <div class="semaControl" id="redC">
+    </div>
+    <div class="semaControl" id="yellowC">
+    </div>
+    <div class="semaControl" id="greenC">
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Ready Event</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // Событие ready срабатывает при загрузке страницы, в тот момент, когда все элементы готовы к работе.
+        // Единственный параметр, который нужно передать событию - это функция, которая будет его обрабатывать.
+        // ready аналог события onload в JavaScript
+
+        // Первый вариант.
+        $(document).ready(function() {
+            alert("Page Loaded I");
+        });
+
+        // Второй вариант.
+        $(document).ready(onLoad);
+
+        function onLoad() {
+            alert("Page Loaded II");
+        }
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>

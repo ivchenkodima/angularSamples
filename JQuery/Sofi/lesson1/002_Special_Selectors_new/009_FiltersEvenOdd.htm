@@ -1,0 +1,62 @@
+﻿<html>
+    <head>
+
+        <title>JQuery, базовые фильтры 2</title>
+
+        <!-- Подключение библиотеки JQuery-->
+   
+        <script src="jquery-1.8.0.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            // JQuery скрипт
+            // :even - все четные.
+            // :odd - все нечетные.
+            // :eq(индекс) - элемент по индексу.
+            // :gt(индекс) -  все элементы индекс которых больше указаного.
+            // :lt(индекс) -  все элементы индекс которых меньше указаного.
+            // :header - получение всех заголовков (h1, h2 и т.д.)
+            $(document).ready(function() {
+                $("tr:even").css("background-color", "#cccccc");
+                $("tr:odd").css("background-color", "#eeeeee");
+            });
+        </script>
+
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    Row 1
+                </td>
+                <td>
+                    Row 1
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Row 2
+                </td>
+                <td>
+                    Row 2
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Row 3
+                </td>
+                <td>
+                    Row 3
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Row 4
+                </td>
+                <td>
+                    Row 4
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

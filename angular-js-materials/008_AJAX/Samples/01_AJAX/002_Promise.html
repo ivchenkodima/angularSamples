@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="exampleApp">
+
+<head>
+    <title>$http Promise</title>
+
+    <script src="../Libraries/angular.js"></script>
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+
+    <script>
+        angular.module("exampleApp", [])
+        .controller("defaultCtrl", function ($scope, $http) {
+
+            $scope.getItems = function () {
+
+                $http.get("../DataFolder/data.json").then(fulfilled, rejected);
+            }
+
+            function fulfilled(response) {
+                $scope.items = response.data;
+
+                console.log("Status: " + response.status); // status - статус код полученный от сервера
+                console.log("Type: " + response.headers("content-type"));
+                console.log("Length: " + response.headers("content-length"));
+               
+            }
+
+            function rejected(error) {
+                console.error(error.status);
+                console.error(error.statusText);
+            }
+        });
+    </script>
+</head>
+<body ng-controller="defaultCtrl">
+    <div id="tasksPanel" class="panel panel-primary">
+        <div class="panel-heading">
+            <div class="panel-title">
+                <button class="btn btn-success" ng-click="getItems()">
+                    <h2>Get Items</h2>
+                </button>
+            </div>
+        </div>
+        <table class="table">
+            <tr ng-repeat="item in items">
+                <td>{{item.name}}</td>
+                <td>{{item.price}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>To do list</title>
+
+	 <link href="../Libraries/bootstrap.css" rel="stylesheet" />
+    <link href="../Libraries/bootstrap-theme.css" rel="stylesheet" />
+
+	 <script src="../Libraries/angular.js"></script>
+    
+	<script type="text/javascript" src='js/app.js'></script>
+	<script type="text/javascript" src='js/ctrl.js'></script>
+	<script type="text/javascript" src='js/model.js'></script>
+	<style type="text/css">
+	.margin{
+		border-radius: 4px;
+		padding: 5px;
+		margin-top:20px; 
+	}
+
+	</style>
+</head>
+<body ng-app='app'>
+	<div ng-controller='listCtrl' class="container">
+		<div   ng-repeat="item in content" class=" bg-info margin">
+			<h2>{{item.title}}</h2>
+			<span>{{item.published}}</span>
+			<p class='і'>{{item.description}}</p>
+			<a class="btn btn-primary" href='{{item.link}}'>See more</a>
+		</div>
+		
+	</div>
+</body>
+</html>

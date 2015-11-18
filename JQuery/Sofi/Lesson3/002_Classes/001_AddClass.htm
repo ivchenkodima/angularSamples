@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>AddClass</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // addClass(имя класса) - добавляет класс для выбраного элемента.
+        //addClass(функция) - функция которая возвращает имя класса
+
+        
+        $(document).ready(function () {
+            // Добавление класса к элементам с id First, Second и Third.
+            $("#First").addClass("class1");
+            $("#Second").addClass("class2");
+            $("div").addClass("class3");
+        });
+          
+    </script>
+
+    <style type="text/css">
+        .class1
+        {
+            color: Green;
+        }
+        .class2
+        {
+            color: Red;
+        }
+        .class3
+        {
+            color: Blue;
+        }
+        div{
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <p id="First">
+       Параграф с id="First"
+    </p>
+    <p id="Second">
+        Параграф с id="Second"
+    </p>
+
+    <div>
+        Текст в диве с позиционированнием по правому краю страницы
+        <div>
+            Текст в диве с позиционированнием по правому краю страницы
+        </div>
+        <div>
+            Текст в диве с позиционированнием по правому краю страницы
+        </div>
+    </div>
+
+    <div>
+        Текст в диве с позиционированнием по правому краю страницы
+    </div>
+    <div>
+        Текст в диве с позиционированнием по правому краю страницы
+    </div>
+    <div>
+        Текст в диве с позиционированнием по правому краю страницы
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>HoverФункция Animate() example</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        var beginX, beginY, Obj;
+
+            var _y = window.innerHeight;
+            var _x = window.innerWidth;
+
+        $(document).ready(function () {
+            Obj = $("#mainer");
+            beginX = 400;
+            beginY = 400;
+
+        });
+        function size(x, y) {
+            console.log( x +" "+ _x);
+            // console.log( y +" "+ _y);
+
+            // console.log(typeof x);
+           if( x < 0 || x > _x  || y < 0 || y > _y)
+                return false;
+            else return true; 
+
+        }
+        
+        $(window).keydown(function (event) {
+            switch (event.keyCode) {
+                case 37: {
+                    beginX -= 100;
+                    if( size(beginX, beginY) )
+                        Obj.animate({ opacity: 1.0, left: beginX + 'px' }, 1000);
+                    else beginX = -100; 
+                }
+                break;
+                case 38: {
+                    beginY -= 100;
+                    if( size(beginX, beginY) )
+                        Obj.animate({ opacity: 1.0, top: beginY + 'px' }, 1000);
+                    else beginY = -100;
+                }
+                break;
+                case 39: {
+                    beginX += 100;
+                    if( size(beginX, beginY) )
+                        Obj.animate({ opacity: 1.0, left: beginX + 'px' }, 1000);
+                    else beginX = window.innerWidth;
+                }
+                break;
+                case 40: {
+                    beginY += 100;
+                    if( size(beginX, beginY) )
+                        Obj.animate({ opacity: 1.0, top: beginY + 'px' }, 1000);
+                    else beginY = window.innerHeight;
+                }
+                break;
+            }
+        });
+
+          </script>
+    <style type="text/css">
+        #mainer {
+            background-color: Green;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            color: White;
+            position: absolute;
+            left: 400px;
+            top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainer">
+        Test div
+    </div>
+</body>
+</html>

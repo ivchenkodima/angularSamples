@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод each()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("p:first").data("name1", "and 1");
+            $("p:first").data("name2", "and 2");
+            $("p:first").data("name3", "and 3");
+            $("p:first").data("name4", "and 4");
+            $("p:first").data("name5", "and 5");
+            $("p:first").data("name6", "and 6");
+
+            var dataP = $("p:first").data();
+
+            for (item in dataP) {
+                $("span:first").html($("span").html() + item + " " + dataP[item] + "<br/>");
+            }
+
+            $("p:first").removeData("name3 name4 name5");
+
+            for (item in dataP) {
+                $("span").eq(1).html($("span").eq(1).html() + item + " " + dataP[item] + "<br/>");
+            }
+        });
+
+    </script>
+
+</head>
+<body>
+
+    <p>Параграф №1</p>
+    <span></span>
+    <br />
+    <br />
+    <span></span>
+</body>
+</html>

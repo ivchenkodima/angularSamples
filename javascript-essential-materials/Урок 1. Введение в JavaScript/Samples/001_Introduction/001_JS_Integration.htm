@@ -1,0 +1,58 @@
+﻿<!--
+
+    Самым простым способом интегрировать в страницу JavaScvript, 
+    является использование тега <script>...</script>.
+    Тег рекомендуется разместить в теге <head>...</head>.
+    Внутри элемента <script> размещается JavaScript, код 
+    который будет выполняться при загрузке страницы.
+
+-->
+<html>
+<head>
+    <title>Интеграция JavaScript</title>
+    
+</head>
+<style>
+    #wrapper{
+        margin: 0 auto;         
+        width: 1000px; 
+        position: relative; 
+        padding-top: 100px;
+        background-color:yellow; 
+    }
+    #main-column {
+        width: 700px; 
+        float: right; 
+        background: blue; 
+        padding: 40px 0;     
+    }
+    #sidebar {
+        width: 300px; 
+        float: left; 
+        background: red; 
+        padding: 40px 0;
+    }
+    #header {
+        position: absolute; 
+        left: 0; 
+        top: 0; 
+        height: 100px; 
+        background: #b0e8f4;
+    }
+    #footer {
+        height: 20px;
+        background: #b0e8f4; 
+        padding: 40px 0;
+        background: green;
+    }
+</style>
+<body>
+    <div id="wrapper">
+        <div id="main-column">Ключевые слова находятся здесь!</div>
+        <div id="sidebar"></div>
+        <div id="header"></div>
+        <div id="footer"></div>
+    </div>
+</body>
+</body>
+</html>

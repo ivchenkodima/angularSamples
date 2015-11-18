@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Practice</title>
+    <script>
+            /*
+
+            Следующие задания:
+            1. Напишите математическую функцию, которая принимает(в виде аргументов)
+            два числа и знак арифметической операции (+,-,/,*). Функция производит арифметическое вычесление
+            и возвращает результат в переменную. Вывести результат с помощью модального окна alert().
+
+            2. Добавьте проверку двух передаваемых чисел в виде аргументов функции следующим образом:
+            числа могут передаваться в виде массивов и возвращать результат(так же, массивом).
+            *** рассмотреть instanceof
+
+            3. Добавить третью проверку: функция принимает два объекта со свойствами 'a' и 'b',
+            так же возвращает результат в виде объекта с ОДНИМ свойством типа string.
+
+            Примечание: Все функции должны проводить проверки на NaN, null и undefiend.
+                
+            */
+
+            // ------ Task 1-3 ------
+            function Math(a,b,oper){
+                if (typeof (a)=='number' && typeof (b)=='number'){
+                    a = parseFloat(a);
+                    b = parseFloat(b);
+                    switch (oper){
+                        case '+':return a+b;break;
+                        case '-':return a-b;break;
+                        case '*':return a*b;break;
+                        case '/': if(b == 0){
+                            return 'Делить на ноль нельзя';
+                        }else{
+                            return a/b;
+                        };break;
+                        default: alert('Вы ввели не вернный арифметичский знак!');break;
+                    }
+                }
+                else if (a instanceof Array && b instanceof Array){
+                    // временный контейнер для результата
+                    var tempResArray = [];
+                    var length = 0;
+                    if(a.length >= b.length){
+                        length = a.length;
+                    }
+                    else{
+                        length = b.length;
+                    }
+                    for(var i = 0; i < length; i++){
+                        var operand1 = parseFloat(a[i]);
+                        var operand2 = parseFloat(b[i]);
+                        if(isNaN(operand1)){
+                            operand1 = 0;
+                        }else if(isNaN(operand2)){
+                            operand1 = 0;
+                        }
+                        switch (oper){
+                            case '+':tempResArray[i]= operand1+operand2;break;
+                            case '-':tempResArray[i]= operand1-operand2;break;
+                            case '*':tempResArray[i]= operand1*operand2;break;
+                            case '/': if(operand2 == 0){
+                                return alert('Делить на ноль нельзя');
+                            }else{
+                                tempResArray[i]= operand1/operand2;
+                            };break;
+                            default: alert('Вы ввели не вернный арифметичский знак!');break;
+                        }
+                    }
+                    return tempResArray;
+                }
+                else if (a instanceof Object && b instanceof Object){
+                    // временный контейнер для результата
+                    var tempResObject = {};
+
+                    switch (oper){
+                        case '+':tempResObject.resultA = a['a']+b['a'];
+                            tempResObject.resultB = a['b']+b['b'];break;
+                        case '-':tempResObject.resultA = a['a']-b['a'];
+                            tempResObject.resultB = a['b']-b['b'];break;
+                        case '*':tempResObject.resultA = a['a']*b['a'];
+                            tempResObject.resultB = a['b']*b['b'];break;
+                        case '/': if(b['a'] == 0 || b['b']==0){
+                            return alert('Делить на ноль нельзя');
+                        }else{
+                            tempResObject.resultA = a['a']/b['a'];
+                            tempResObject.resultB = a['b']/b['b'];
+                        };break;
+                        default: alert('Вы ввели не вернный арифметичский знак!');break;
+                    }
+                    return tempResObject;
+                }
+            }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

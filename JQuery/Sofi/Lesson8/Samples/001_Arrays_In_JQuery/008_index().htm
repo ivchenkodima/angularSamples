@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод extend()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("div").click(function () {
+
+                // Производит поиск среди выбранных элементов и возвращает индекс элемента, 
+                // если находит его.  Отсчет начинается с нуля. 
+                // Если передан объект jQuery, то будет выбран только первый элемент.
+
+                var index = $("div").index(this);
+                $("span").text("That was div index #" + index);
+            });
+
+        });
+    </script>
+
+    <style>
+        div {
+            background: yellow;
+            margin: 5px;
+        }
+
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <span>Click a div!</span>
+    <div>First div</div>
+
+    <div>Second div</div>
+    <div>Third div</div>
+</body>
+</html>

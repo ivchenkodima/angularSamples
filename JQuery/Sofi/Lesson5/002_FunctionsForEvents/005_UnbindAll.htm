@@ -1,0 +1,41 @@
+﻿<html>
+    <head>
+        <title>UnbindAll</title>
+        <script src="jquery-1.8.1.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+            // unbind() - функция удаляет все обработчики на событие с выбранного элемента
+
+            $(document).ready(function () {
+
+                $("#btnBind").click(function () {
+                    $("input:first").bind("click", Handler);
+                    $("input:first").val("Работает!");
+                });
+
+                $("#btnUnbind").click(function () {
+
+                    // удаляются все обработчики всех событий
+                    $("input:first").unbind();
+                    
+                    // удаляются обработчики событяи click
+                    //$("input:first").unbind("click");
+
+                    $("input:first").val("Не работает");
+                });
+
+            });
+
+            function Handler() {
+                alert("hello");
+            }
+
+        </script>
+    </head>
+
+    <body>
+        <input type="button" value="Не работает" />
+        <input type="button" value="Bind" id="btnBind" />
+        <input type="button" value="Unbind" id="btnUnbind" />
+    </body>
+</html>

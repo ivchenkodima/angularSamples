@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+
+        var my_object = {
+            '0': 'zero',
+            '1': 'one',
+            '2': 'two',
+            '3': 'three',
+            '4': 'four',
+            length: 5 // свойство length как у обычного массива.
+        };
+
+        // Когда метод slice вызывается нормальным способом он рассматривает ключевое слово this как ссылку на массив, который нужно обработать.
+        // Если необходимо обработать объект похожий на массив (у которого присутствует свойство length) можно использовать следующий код.
+        var sliced = Array.prototype.slice.call(my_object, 3);
+
+        // метод slice вызван через функцию call. В методе slice ключевое слово this ссылается на объект my_object, который не является массивом,
+        // но имеет все необходимые параметры что бы метод slice воспринимал его как обычный массив и корректно работал.
+        // необходимые параметры - наличие свойства length и цифровые имена свойств.
+
+        document.write(sliced);
+    </script>
+
+</head>
+<body>
+</body>
+</html>

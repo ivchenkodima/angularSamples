@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
+  <script src="http://code.angularjs.org/1.1.5/angular.js"></script>
+<script>
+	/*Simple example of using ng-animate with css animations in AngularJS - based on an idea at nganimate.org. Note this example uses Angular v1.1.5 and the approach/syntax is going to  changed a little in v1.2 which will be released soon  */
+
+	/*
+	type some text into the filter field eg "pp" (without the quotes) and non matching songes animate off screen
+	*/
+
+	function myCtrl($scope){
+	    $scope.songs=['Sgt. Peppers Lonely Hearts Club Band','With a Little Help from My Friends','Lucy in the Sky with Diamonds','Getting Better' ,'Fixing a Hole','Shes Leaving Home','Being for the Benefit of Mr. Kite!' ,'Within You Without You','When Im Sixty-Four','Lovely Rita','Good Morning Good Morning','Sgt. Peppers Lonely Hearts Club Band (Reprise)','A Day in the Life'];
+	  }
+
+</script>
+<style>
+	li{
+		list-style: none; 
+	}
+	body{
+		margin: 50px; background-color: #333; color: #ccc; overflow: hidden;
+	}
+	h3{
+		color: #fff;
+	}
+	.animate-enter, .animate-leave {
+		transition: 1000ms ease-in all;
+		position: relative;
+		display: block;
+	} 
+	.animate-enter.animate-enter-active, .animate-leave {
+		left: 0;
+	}
+	.animate-leave.animate-leave-active, .animate-enter {
+		left: 500px;
+	}
+</style>
+
+</head>
+
+<body ng-app>
+	<h3>Songs on The Beatles - Sgt. Pepper's Lonely Hearts Club Band (1967)</h3>
+	<div ng-controller="myCtrl">
+	<input type="text" ng-model="search">
+	<button type="submit">Filter</button>
+	<ul>
+		<li ng-animate="animate" ng-repeat="song in songs | filter:search">
+	{{song}}</li> 
+	</ul>
+	</div>
+		
+</body>
+</html>

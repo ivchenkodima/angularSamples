@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Button from UI</title>
+
+
+</head>
+<body>
+    <input type="submit" value="input button" />
+    <button>Button standard</button>
+    <a href="#">Anchor</a>
+    <input type="checkbox" id="check" /><label for="check">Checkbox</label>
+    </br>
+    <div></div>
+    <link rel="stylesheet" 
+    href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script>
+        // button() - улучшает стандартные элементы такие как кнопки, поля ввода и якоря (ссылка с href="#")
+        // представляя их в виде кнопки со свеми нужными стилями срабатывающими при наведении и нажати на кнопку
+
+        $(document).ready(function () {
+            $("input, a, button").button().click(function () {
+                $("div").text(this.valueOf());
+            });
+
+        });
+
+    </script>
+</body>
+</html>

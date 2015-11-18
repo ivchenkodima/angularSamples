@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Grep function</title>
+    
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // $.grep( array, function ,[ invert ] ) - функция отфильтровывает масив
+        // array - масив для фильтрации
+        // function - функция для проверки каждого элемента
+        // invert - значение False - возвращает масив подходящих элементов, True - возвращает элементы которые не подходят под фильтр
+        $(document).ready(function () {
+            var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var arr1 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            $("div:first").text(arr.join(", "));
+            arr = $.grep(arr, function (n, i) {
+                return (n !== 5 && i > 4);
+            }, false);
+            $("div:last").text(arr.join(", "));
+
+            arr1 = $.grep(arr1, function (n, i) {
+                return (n !== 5 && i > 4);
+            }, true);
+            $("p").text(arr1.join(", "));
+
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <p></p>
+</body>
+</html>

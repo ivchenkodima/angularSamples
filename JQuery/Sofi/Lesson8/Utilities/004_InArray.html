@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>InArray function</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // inArray(value, array [, fromIndex ] ) - функция для поиска конкретного элемента в масиве, возвращает индекс данного элемента или -1 если такового нет
+        // value - значение для поиска в масиве
+        // array - масив для поиска элемента
+        // fromIndex - индекс с которого начинается поиск элемента
+
+        $(document).ready(function () {
+            var arr = ["first", "second", "third", "fourth"];
+            $("div:first").text(arr.join(", "));
+            $("div:last").text(function () {
+                var tmp = $.inArray("third", arr, 0);
+                return tmp;
+            });
+            $("p").text(function () {
+                var tmp = $.inArray("fifth", arr, 0);
+                return tmp;
+            });
+
+
+        });
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <p></p>
+</body>
+</html>

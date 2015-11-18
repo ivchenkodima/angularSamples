@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Resizable usage</title>
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script>
+        // resizable() - функция меняет размеры любого DOM элемента
+        // изменение размера возможно потянув за правый или нижний край элемента или же за правый нижний угол
+        $(document).ready(function () {
+            $("#res_img").resizable();
+        });
+
+    </script>
+</head>
+<body>
+    <img id="res_img" height="120px" width="250px" src="http://shustov.su/images/items/jqueryui.jpg" />
+    <img height="120px" width="250px" src="http://shustov.su/images/items/jqueryui.jpg" />
+    <img height="120px" width="250px" src="http://shustov.su/images/items/jqueryui.jpg" />
+</body>
+</html>

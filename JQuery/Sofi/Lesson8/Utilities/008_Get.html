@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Get function</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // get(index) - возвращает объект jQuery по индексу
+        $(document).ready(function () {
+            $("*", document.body).click(function (event) {
+                event.stopPropagation();
+                var domElement = $(this).get(0);
+                $("span:first").text("Clicked on - " + domElement.nodeName);
+            });
+        });
+       
+    </script>
+    <style>
+        span {
+            color: red;
+        }
+
+        div {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <span>&nbsp;</span>
+    <p>In this paragraph is an <span>important</span> section</p>
+    <div><input type="text"></div>
+</body>
+</html>

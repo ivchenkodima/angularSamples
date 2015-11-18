@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="jquery-1.3.2.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        //$.boxModel - true, если браузер использует модель W3C - свойства width и height, которые задаются через CSS свойства
+        // определяют размеры области контента, для того что бы рассчитать реальную ширину и высоту элемента, необходимо добавить значения свойств
+        // padding, margin и border
+        // IE 8 и более ранние версии включали padding и border в ширину элемента.
+        // http://www.w3schools.com/css/css_boxmodel.asp
+
+        $(document).ready(function () {
+
+            $("p").html("Браузер использует модель W3C: <span>" +
+                    jQuery.boxModel + "</span>");
+
+        });
+    </script>
+</head>
+<body>
+
+    <p></p>
+
+</body>
+</html>

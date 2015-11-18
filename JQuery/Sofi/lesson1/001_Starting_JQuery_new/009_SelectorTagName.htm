@@ -1,0 +1,39 @@
+﻿<html>
+    <head>
+
+        <title>JQuery selector Tag Name</title>
+
+        <!-- Подключение библиотеки JQuery-->
+   
+        <script src="jquery-1.8.0.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            // JQuery скрипт
+
+            // Следующий код вешает обработчики на клик для всех тэгов <а>
+            
+            $(function () {
+                
+                // $("a") - JQuery селектор - позволяет выбрать все тэги по имени
+            
+                $("a").click(function () {                  // click() - функция которая будет обработчиком при нажатии на ссылку.
+            
+                    alert("Hello world");
+            
+                });
+            
+            });
+
+        </script>
+
+    </head>
+
+    <!--======================================= HTML разметка страницы =========================================-->
+
+    <body>
+
+         <a href="#">Link</a>
+
+    </body>
+</html>

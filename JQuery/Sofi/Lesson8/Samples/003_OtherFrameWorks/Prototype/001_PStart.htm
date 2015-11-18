@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод data()</title>
+    <script type="text/javascript" src="prototype-1.7.1.js"></script>
+    <script type="text/javascript">
+
+        Event.observe(document, 'click', function () {
+
+            $("Id1").addClassName("green-class");
+            $("Id2").addClassName("green-class");
+
+        });
+
+    </script>
+    <style type="text/css">
+        .green-class {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="Id1">Параграф №1</p>
+    <p>Параграф №2</p>
+    <p id="Id2">Параграф №3</p>
+    <p>Параграф №4</p>
+    <p>Параграф №5</p>
+
+</body>
+</html>

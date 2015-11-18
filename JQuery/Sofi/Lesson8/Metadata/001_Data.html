@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Param function</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // data(name, value) - хранит произвольные данные связанные с объектом
+        // name - имя данных
+        // value - значение данных
+        //  data( name ) - возвращает значение указанных данных
+
+        $(document).ready(function () {
+            $("div:first").data("comment", " here is some value of Comment");
+            $("div:first").click(function () {
+                $("div:last").text($("div:first").data("comment"));
+                $("div:last").show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>First div</div>
+    <div style="display:none"></div>
+</body>
+</html>

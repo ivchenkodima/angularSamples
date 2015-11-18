@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Click</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        // click() - Вызывает событие click для элемента, либо каждого элемента набора.
+        // Как результат все привязанные к событию click функции выполняются.
+
+        // click(function) - Назначает функцию к событию click для каждого элемента набора. 
+        // click рассматривается как mousedown и mouseup следующие друг за другом на одном и том же участке экрана.
+
+        $(document).ready(function () {
+
+            $("p").click(function () { alert("readed"); });
+
+            $("#button").click(function () { $("p").click() });
+        });
+
+    </script>
+
+</head>
+<body>
+    <p>Параграф №1</p>
+    <p>Параграф №2</p>
+    <p>Параграф №3</p>
+    <input type="button" id="button" value="push me" />
+</body>
+</html>

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Make Array</title>
+
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+        // makeArray( obj) - функция преобразовывает любой набор объектов в масив
+        // obj - набор элементов
+        $(document).ready(function () {
+            var divs = $("div");
+            var new_arr = $.makeArray(divs);
+            new_arr.reverse();
+            $(new_arr).appendTo(document.body);
+        });
+
+    </script>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            margin: 5px;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+        #first{
+            background-color: #ad5757;
+        }
+
+        #second{
+            background-color: #12347a;
+        }
+
+        #third{
+            background-color: #7bbe2f;
+        }
+
+        #fourth{
+            background-color: #962369;
+        }
+    </style>
+</head>
+<body>
+    <div id="first">First</div>
+    <div id="second">Second</div>
+    <div id="third">Third</div>
+    <div id="fourth">Fourth</div>
+</body>
+</html>

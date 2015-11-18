@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+
+    <!-- 
+Создать программу для записи людей в очередь
+
+Есть окошко куда подходит человек, окошко открывается и он заполняет анкету.
+1) имя, ---- тип строка
+   фамилия, ---тип строка
+   пол,
+   возраст, ----тим число
+   дата рождения(день, месяць год),---- тип объект
+   языки програмирования которыми владеют ----тип массив
+2)После того как человек закончил заполнения всплываем меню ----switch()
+    А) добавить еще человека
+    б) удалить человека( по имени или по новеры в списке)
+    в) посмотреть весь список 
+    г) отсортировать по имени или по возрасту или по количетву языков програмирования по убыванию
+    д) выйти  из програмы.
+
+для выполнения 2б 2в - нужно уметь обращаться з масивами
+               2г --- уметь писать функции для сортировки
+
+     -->
+    <script type="text/javascript">
+
+    var user0 ={
+
+        name: null,
+        sname: null,
+        sex: null,
+        age: null,
+        dob: undefined,
+        lang: undefined
+
+    };
+
+    var user1 ={
+
+        name: "Andrey",
+        sname: "Parfenyuk",
+        sex: 'm',
+        age: 28,
+        dob: new Date(1987, 1, 20),
+        lang: ["Basic", "Pascal", "Java", "Javascript"]
+
+    },{
+
+        name: "Anton",
+        sname: "Kravchenko",
+        sex: 'm',
+        age: 22,
+        dob: new Date(1987, 6, 5),
+        lang: ["Basic", "Pascal", "Java", "Javascript", "C++"]
+
+    },{
+        name: "Tanya",
+        sname: "Steblova",
+        sex: 'f',
+        age: 28,
+        dob: new Date(1987, 8, 16),
+        lang: ["Java", "C++", "HTML", "CSS"]
+
+    };
+    var list = [];
+    list.push(user1);
+    
+     function printUser(user){
+    for (e in user) 
+        document.write(user[e]+"</br>");
+    
+    }
+      
+   /* printUser(user1);
+    document.write("<hr>");*/
+    
+    
+    // в) посмотреть весь список 
+    function printList(list){
+
+        for (var i = 0; i < list.length; i++) {
+             printUser(list[i]);
+             document.write("<hr>");
+            
+        }
+                 
+    }
+
+    // printList(list);
+
+    //заполнение массива значениями из клавиатуры
+    var fullMas = function(){
+            var lang = [];
+            amount=+prompt("How many computer lang do you know?", 0);
+            for (var i = 0; i < amount; i++) {
+                lang[i]=prompt("Computer lang name", "");
+
+            };
+            return lang;
+            
+
+        }
+
+    //очистка полей пользователя - чистый бланк
+    
+    function clear(user){
+      for (e in user0) {
+            if (e=="dob") /*|| (e=="lang")*/
+                user0[e]=undefined;
+            else
+                user0[e]=null;
+        }  
+    }
+        
+//А) добавить еще человека
+
+    function addUser(){
+        var user0 ={
+
+            name: null,
+            sname: null,
+            sex: null,
+            age: null,
+            dob: undefined,
+            lang: undefined
+
+        };
+        user0.name = prompt("User name", "");
+        user0.sname = prompt("User sname", "");
+        user0.sex = prompt("User sex m/f", "");
+        user0.age = +prompt("User age", "");
+        user0.dob = new Date(prompt("User dob yyyy, m, d", ""));
+        user0.lang = fullMas();
+        list.push(user0);
+        // clear(user0);
+
+
+    }
+
+//б) удалить человека( по имени или по номеру в списке)
+
+   
+    function delUser(){
+        var p = prompt("Enter user name or index");
+        if (typeof parseInt(p) == "number")
+            delete list[p];
+        else{
+            for (var i = 0; i < list.length; i++) 
+                if (list[i].name==p)
+                  delete list[i];
+        }
+    }
+
+//г) отсортировать по имени или по возрасту или по количетву языков програмирования по убыванию
+
+    function sortUser(){
+
+        var alt = prompt("Enter the way you like to sort: 1-name, 2-age, 3-amount of lang desc", "");
+
+        switch (alt) {
+                case "1":
+                    {
+                        list.sort(function (a, b) {
+                              if (a.name < b.name) {
+                                return 1;
+                              }
+                              if (a.name > b.name) {
+                                return -1;
+                              }
+                              // a должно быть равным b
+                              return 0;
+                            });
+                    }
+                    break;
+                case "2":
+                    {
+                       list.sort(function (a, b) {
+                              if (a.age < b.age) {
+                                return 1;
+                              }
+                              if (a.age > b.age) {
+                                return -1;
+                              }
+                              // a должно быть равным b
+                              return 0;
+                            });
+                    }
+                    break;
+                case "3":
+                    {
+                        list.sort(function (a, b) {
+                              if (a.lang.length < b.lang.length) {
+                                return 1;
+                              }
+                              if (a.lang.length > b.lang.length) {
+                                return -1;
+                              }
+                              // a должно быть равным b
+                              return 0;
+                            });
+                    }
+                    break;
+                default:
+                    {
+                        document.write("Неверный выбор.");
+                    }
+                    break;
+            }
+    }
+   
+    addUser();
+    
+    
+   var exit = false;
+   do{
+        var v = prompt("Enter what do you want to do with users: 1-add, 2-del, 3-print, 4 - sort, 5 - exit", "");
+     switch (v) {
+            case "1":
+                {
+                    addUser();                    
+                    // list.push(user0);
+                    
+                }
+                break;
+            case "2":
+                {
+                    delUser();
+                }
+                break;
+            case "3":
+                {
+                    printList(list);
+                }
+                break;
+            case "4":
+                {
+                    sortUser();
+                }
+                break;
+            case "5":
+                { 
+                    exit = true;
+                }
+                break;
+            default:
+                {
+                    document.write("You chose nothing! Good Bye!");
+                    exit = true;
+                }
+                break;
+        }
+    }while (!exit);
+
+    // printList(list);
+
+    </script>
+    
+    
+    
+   
+</head>
+<body>
+</body>
+</html>

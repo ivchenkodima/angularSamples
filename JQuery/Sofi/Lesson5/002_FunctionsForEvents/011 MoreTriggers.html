@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>More Triggers</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+</script>
+<script>
+    $(document).ready(function () {
+        $("input").select(function (e, a, b) {
+            $("input").after(" Text marked!" + a + b);
+        });
+        $("button").click(function () {
+            $("input").trigger("select", [" first ", "second"]);
+        });
+    });
+</script>
+</head>
+<body>
+
+<input type="text" value="Hello World">
+<br><br>
+<button>Trigger the select event for the input field</button>
+
+</body>
+</html>
+

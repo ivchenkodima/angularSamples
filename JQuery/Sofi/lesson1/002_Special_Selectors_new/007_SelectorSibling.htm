@@ -1,0 +1,65 @@
+﻿<html>
+    <head>
+
+        <title>Селектор, prev ~ siblings</title>
+
+        <!-- Подключение библиотеки JQuery-->
+   
+        <script src="jquery-1.8.0.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+
+            // JQuery скрипт
+            // $(prev ~ siblings) - JQuery селектор - выбирает все элементы одного уровня с prev после него,
+            // которые соответствуют селектору sibling
+            $(document).ready(function() {
+                $("#prev ~ div").css("border", "3px groove blue");
+            });
+        </script>
+
+        <style type="text/css">
+            div, span
+            {
+                display: block;
+                width: 80px;
+                height: 80px;
+                margin: 5px;
+                background: #bbffaa;
+                float: left;
+                font-size: 14px;
+            }
+            div#small
+            {
+                width: 60px;
+                height: 25px;
+                font-size: 12px;
+                background: #fab;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div>
+            div (не подходит, потому что перед #prev)
+        </div>
+
+        <span id="prev">span#prev</span>
+        
+        <div>
+            div sibling
+        </div>
+        
+        <div>
+            div sibling
+            <div id="small">
+                div inner
+            </div>
+        </div>
+
+        <span>span sibling (not div)</span>
+        
+        <div>
+            div sibling
+        </div>
+    </body>
+</html>

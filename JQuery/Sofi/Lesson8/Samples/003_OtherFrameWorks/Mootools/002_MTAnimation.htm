@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод data()</title>
+    <script src="mootools-core-1.4.5-full-compat.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+
+        document.addEvent('domready', function () {
+
+            window.addEvent('domready', function () {
+                var duration = 350; // время перехода
+
+                // проходим по всем ссылкам внутри контейнера
+                $each($$('#links-block a'), function (item) {
+                    // событие при наведении
+                    item.addEvent('mouseover', function (e) {
+                        e.stop(); // останавливаем событие наведения
+                        var colorFx = new Fx.Tween(this, { 'duration': duration }); // создаем новый переход с указанной продолжительностью
+                        colorFx.start('color', '#E00'); // делаем переход цвета от текущего до красного
+                    });
+
+                    // обработчик события выхода курсора за пределы элемента
+                    item.addEvent('mouseout', function (e) {
+                        e.stop();
+                        var colorFx = new Fx.Tween(this, { 'duration': duration });
+                        colorFx.start('color', '#00E');
+                    });
+                });
+            });
+        });
+
+    </script>
+    <style type="text/css">
+        body {
+            padding: 2em;
+            background: #FFF;
+            color: #000;
+        }
+
+        #links-block p {
+            border: 3px solid #CCC;
+            background: #EBEBEB;
+            padding: .5em .7em;
+            width: 30em;
+            font-size: 1.5em;
+            font-weight: bold;
+            line-height: 1.4em;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="links-block">
+        <p>
+            Чизелевание снижает <a href="#">тяжелосуглинистый подбур</a> даже в том случае, если <a href="#">непосредственное наблюдение</a>
+            этого явления затруднительно. Агрегат, по данным <a href="#">почвенной съемки</a>, охлаждает органо-минеральный <a href="#">карбонат кальция</a>
+            только в отсутствие тепло- и массообмена с окружающей средой.
+        </p>
+        <br />
+    </div>
+
+</body>
+</html>

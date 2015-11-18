@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Метод extend()</title>
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            jQuery.extend({
+
+                min: function (a, b) { return a < b ? a : b; },         // Функция для поиска наименьшего
+
+                max: function (a, b) { return a > b ? a : b; },         // Функция для поиска наибольшего
+
+                sum: function () {
+                    var sum = 0;
+                    for (var i = 0; i < arguments.length; i++) {        // Функция для нахождения суммы
+                        sum += arguments[i];
+                    }
+                    return sum;
+                }
+            });
+
+            var minV = $.min(2, 3);
+            var maxV = $.max(4, 5);
+            var sum = $.sum(4, 5, 8, 7, 5);
+
+            document.write("Минимальное значение: " + minV + "<br />");
+            document.write("Максимальное значение: " + maxV + "<br />");
+            document.write("Сумма: " + sum + "<br />");
+        });
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>

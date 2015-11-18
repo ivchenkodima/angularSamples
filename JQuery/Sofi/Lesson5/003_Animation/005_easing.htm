@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Функция Animate() easing</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            // последний параметр - имя функции, которая контролирует скорость воспроизведения анимации.
+            // возможные значения - linear, swing
+            $("div").animate({ opacity: 0.25, marginLeft: '650px' }, 1000, "linear");
+        });
+
+    </script>
+
+</head>
+<body>
+    <div style="background-color: Green; width: 100px; height: 100px; text-align: center; color: White;">
+        Test div
+    </div>
+</body>
+</html>

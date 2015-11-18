@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Attributes</title>
+
+    <script src="jquery-1.8.1.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        //.attr( имя_атрибута, функция )
+        // функция будет возвращать значение для аттрибута 
+        // Устанавливает один атрибут у выбраного элемента или группы элементов
+
+        $(document).ready(function() {
+            // Установка значения атрибута title через вызов функции у всех тэгов <a>
+            $("a").attr("title", valueOfTitle());
+
+            // Установка значения атрибута value для поля ввода в значение атрибута name этого же элемента
+            $("input").attr("value", function () { return $("input").attr("name");});
+        });
+
+        function valueOfTitle() {
+            return "This is a tooltip of <a>";
+        }
+    
+    </script>
+
+</head>
+<body>
+
+    <div>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+    </div>
+    <input type="text" name="Some name" value="Vladyslav"/>
+</body>
+</html>

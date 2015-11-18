@@ -1,0 +1,36 @@
+﻿<html>
+    <head>
+
+        <title>JQuery getting started</title>
+
+        <!-- Подключение библиотеки JQuery-->
+   
+        <script src="jquery-1.8.0.js" type="text/javascript"></script>
+
+        <script type="text/javascript">
+            //animate(properties, duration, easing,complete)
+            //properties - набор атрибутов стиля CSS
+            //duration default: 400- время выполнения анимации
+            //easing (not obvious) default: swing - Имя функции для ослабления перехода. Существуют два встроенных значения: «linear» и «swing».
+            //complete (not obvious) - функция вызывающаяся по окончанию работы анимации
+            $(function () {
+                $("#div1")
+                    .css({
+                        height: "30px",
+                        width: "30px",
+                        backgroundColor: "Green"
+                    }).
+                    animate({
+                        marginLeft: "1000px"
+                    },
+                    5000, function () { alert("Finish") });
+            });
+
+        </script>
+
+    </head>
+
+    <body>
+        <div id="div1" />
+    </body>
+</html>
